@@ -89,7 +89,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes1[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes1[i].id} </br> Magnitude: ${quakes1[i].mag} </br> Location: ${quakes1[i].coords}`)
         )
     };
     for (i = 0; i < quakes2.length; i++) {
@@ -101,7 +101,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes2[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes2[i].id} </br> Magnitude: ${quakes2[i].mag} </br> Location: ${quakes2[i].coords}`)
         )
     };
     for (i = 0; i < quakes3.length; i++) {
@@ -113,7 +113,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes3[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes3[i].id} </br> Magnitude: ${quakes3[i].mag} </br> Location: ${quakes3[i].coords}`)
         )
     };
     for (i = 0; i < quakes4.length; i++) {
@@ -125,7 +125,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes4[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes4[i].id} </br> Magnitude: ${quakes4[i].mag} </br> Location: ${quakes4[i].coords}`)
         )
     };
     for (i = 0; i < quakes5.length; i++) {
@@ -137,7 +137,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes5[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes5[i].id} </br> Magnitude: ${quakes5[i].mag} </br> Location: ${quakes5[i].coords}`)
         )
     };
     for (i = 0; i < quakes6.length; i++) {
@@ -149,7 +149,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
                 fillOpacity: Opacity,
                 radius: (quakes6[i].mag * radMultiplier),
                 weight: weight
-            })
+            }).bindPopup(`ID: ${quakes6[i].id} </br> Magnitude: ${quakes6[i].mag} </br> Location: ${quakes6[i].coords}`)
         )
     };
 
@@ -205,4 +205,12 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     };
     L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(myMap)
     legend.addTo(myMap);
+
+ 
+    quakeLayer1.bindPopup(quakeMarkers1.id + "<br> Capacity: " + quakeMarkers1.mag + "<br>" + quakeMarkers1.coords + " Bikes Available");
+
+
+    for (i=0;i>quakeMarkers1.length;i++) {
+        quakeMarkers1[i].bindPopup(quakeMarkers1.id)
+    }
 })
